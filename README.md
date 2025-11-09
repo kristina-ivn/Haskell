@@ -90,4 +90,18 @@ main = do
   let nums= read input :: [Int]
   input2 <- getLine
   let n = read input2 :: Int
-  print(removeNthel nums [] 1 n) ```
+  print(removeNthel nums [] 1 n)
+
+--fibonachi
+fibloop list index n=
+  if index < n then 
+    fibloop (list  ++ [list !! (index -1) + list !! (index-2)]) (index + 1) n
+  else
+    list
+      
+fib n =fibloop [1,1] 2 n 
+
+main = do
+  input <- getLine
+  let nums= read input :: Int
+  print(fib nums)
